@@ -8,26 +8,9 @@ These diagrams are particularly useful because they directly represent the passa
 
 To provide some motivation, here is an example sequence diagram that might have been part of a user story called "User Can Update Content". Such a user story might have several use-case scenarios which can become fairly complex but are, nevertheless, very important to understanding exactly what happens. This diagram might have been used to capture how a particular use-case, "Set in_use Status" might be designed.
 
-...A Test of Embedded images on GitHub. No Centring.
-
-![](UserCanUpdateContent.png)
-
-...Another Test of Embedded images on GitHub. Trying the braindead center tags.
-
-<center>![](UserCanUpdateContent.png)</center>
-
-... Using p align with image tag.
-
 <p align="center">
   <img src="UserCanUpdateContent.png">
 </p>
-
-... using p align outside of markdown syntax.
-
-<p align="center">
-![](UserCanUpdateContent.png)
-</p>
-
 
 As I hope is evident from this example, the diagram clearly communicates the essence of the use-case. Because of this clarity, sequence diagrams are a valuable way to explore, communicate, and precisely capture use-cases that might arise while discussing a user story.
 
@@ -65,9 +48,9 @@ The _thingies_, the objects that send/receive messages, run across the top of th
 
 * A _datastore_, also known as a _database_, which are data storage systems and are kind of self explanatory.
 
-<center>
-![](TypesOfThingies.png)
-</center>
+<p align="center">
+  <img src="TypesOfThingies.png">
+</p>
 
 Participants (objects) are the catch-all _thingie_ and can be used to represent pretty much anything. The [Sequence Diagram] tool uses the keyword `participant` and does not have a keyword for object. This document will tend to use the word _participant_ and _object_ (and _thingie_, for that matter) interchangeably.
 
@@ -78,9 +61,9 @@ Keep in mind, this is a very general notion of an object -- it could be a "class
 
 Each one of these has a lifeline that is represented by a dashed line running down the diagram. When a _thingie_ is actively doing something, like executing some code, the lifeline is changed from a dashed line to a narrow, vertical box. This is known as _activating_ the object.
 
-<center>
-![](LifelineActivation.png)
-</center>
+<p align="center">
+  <img src="LifelineActivation.png">
+</p>
 
 > **Hint:** Activations can often clarify a diagram but the gist of the sequence can usually be understood without them. I rarely take the time to draw them on a whiteboard, but I usually add them to more formally prepared diagrams. They should be treated as an optional notational convention.
 
@@ -103,9 +86,9 @@ Given two line styles and two arrowhead styles, we have four possible combinatio
 
 The following shows an example of all three plus the very special _synchronous message to self_. This technique is used to detail something like a sub-routine call that is significant to the user-case.
 
-<center>
-![](TypesOfMessages.png)
-</center>
+<p align="center">
+  <img src="TypesOfMessages.png">
+</p>
 
 ## 6. An Example
 
@@ -170,9 +153,9 @@ activate Web Browser
 
 That bit of script produces this diagram:
 
-<center>
-![](LockingAnActivity.png)
-</center>
+<p align="center">
+  <img src="LockingAnActivity.png">
+</p>
 
 Pretty cool, eh?
 
@@ -212,11 +195,11 @@ lifelines; avoid\nplacing them over a lifeline.
 
 In this diagram we see the internal state of object A, and a common state of objects B and C, represented by boxes. Each state box contains a description of the state.
 
-<center>
-![](StateBoxesAndNotes.png)
-</center>
+<p align="center">
+  <img src="StateBoxesAndNotes.png">
+</p>
 
-These two conventions makes it a lot easier to understand how an objects state changes over time, and to distinguish information notes and comments.
+These two conventions makes it a lot easier to understand how an object's state changes over time, and to distinguish informational notes and comments from object-state.
 
 ## 8. Fragments
 
@@ -263,9 +246,9 @@ else
 end
 ```
 
-<center>
-![](ExampleFragments.png)
-</center>
+<p align="center">
+  <img src="ExampleFragments.png">
+</p>
 
 > **Best Practice:** As you can see, fragments can be useful as a diagramming technique, but at the risk of making the diagrams more challenging to comprehend. Use them when necessary, but avoid them if possible.
 
@@ -309,9 +292,9 @@ database Customer DB
 ... # The rest, removed for brevity.
 ```
 
-<center>
-![](StyleExample.png)
-</center>
+<p align="center">
+  <img src="StyleExample.png">
+</p>
 
 In other words, and generally speaking, don't bother getting fancy. It makes editing existing sequence diagram scripts more difficult and it makes the reader wonder what, if anything, a particular style is supposed to mean.
 
