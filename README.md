@@ -6,9 +6,9 @@ Please keep in mind, this is a public repository.
 
 ## Table of Contents
 
-|      Document       | Description                        | Author  |
-|:-------------------:|------------------------------------|---------|
-| [Sequence Diagrams] | Introduction & some best practices | D. Love |
+|      Document       | Description                        |   Author   |
+|:-------------------:|------------------------------------|------------|
+| [Sequence Diagrams] | Introduction & some best practices | D. A. Love |
 
 
 
