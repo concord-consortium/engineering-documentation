@@ -1,0 +1,25 @@
+title Types of Messages
+participantspacing 3
+
+participant Object-1
+participant Object-2
+
+space
+
+activate Object-1
+Object-1->Object-2: Synchronous Message
+deactivate Object-1
+
+activate Object-2
+Object-2-->>Object-1: Response Message
+deactivateafter Object-2
+
+activate Object-1
+Object-1->>Object-2: Asynchronous Message
+deactivate Object-1
+activate Object-2
+Object-2->Object-2:Object-2 sends a\nmessage to itself.
+activate Object-2
+space
+deactivateafter Object-2
+

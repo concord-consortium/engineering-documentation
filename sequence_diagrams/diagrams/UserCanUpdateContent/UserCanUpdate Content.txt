@@ -1,0 +1,33 @@
+title User Can Update Content: Set in_use Status
+
+actor User
+participant "Editor UI Page" as participantMultiline
+participant Content Server
+database Postgress
+
+box over User:We pick-up the user's\nediting session where\nthey are attempting to\nturn on the **in_use**\nsetting for a particular\npiece of content. 
+
+User-->>participantMultiline:Clicks "in_use" checkbox
+
+activate participantMultiline
+participantMultiline->Content Server:Post Reguest:\nSet "in_use"
+deactivate participantMultiline
+
+activate Content Server
+Content Server->Postgress:Active Record: Update\ncontent meta-data
+deactivate Content Server
+
+activate Postgress
+note left of participantMultiline:Note: Have we decided\nwe are using iFrames or\na different UI architecture\nin the browser?
+Content Server<<-Postgress:Success
+deactivate Postgress
+
+activate Content Server
+box over Content Server:At this point, enough\ndata is present to\nformat the updated\nstatus page and\nupdate the iFrame.
+participantMultiline<<-Content Server:Response with\nupdated UI
+activate participantMultiline
+deactivate Content Server
+
+box over participantMultiline:UI refreshes the browser\nshowing the in_use checkbox\nin the checked state.
+space
+deactivate participantMultiline

@@ -1,0 +1,6 @@
+title Types of Thingies
+participantspacing 3
+
+participant Object
+actor Actor
+database Datastore

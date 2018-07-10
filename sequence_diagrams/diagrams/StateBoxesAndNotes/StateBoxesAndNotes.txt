@@ -1,0 +1,7 @@
+title State Boxes and Notes
+
+box over Object A:Boxes represent internal\nstate of an object, at a\nparticular point in time.
+
+box over Object B,Object C:Boxes spanning adjacent lifelines\ndescribe state shared by multiple\nobjects.
+
+note left of Object B:Use notes instead of boxes,\nfor details other than state.\nOnly position notes LEFT or\nRIGHT of lifelines; avoid\nplacing them over a lifeline.

@@ -1,0 +1,58 @@
+title Example of Loop and Alt
+
+actor Customer
+participant Storefront UI
+participant Order Entry Server
+database Customer DB
+
+
+loop Repeat for Each Item
+Customer->>Storefront UI:Click "Add Item"
+activate Storefront UI
+Storefront UI->Order Entry Server:JSON request:\nAdd to shopping-cart
+deactivate Storefront UI
+activate Order Entry Server
+Order Entry Server->Customer DB:Add item to order
+deactivate Order Entry Server
+activate Customer DB
+Order Entry Server<<--Customer DB:Ack
+deactivate Customer DB
+activate Order Entry Server
+box over Order Entry Server:Order status and\nshopping-cart updated
+Storefront UI<<--Order Entry Server:AJAX Response:\nShopping-cart update
+deactivateafter Order Entry Server
+activate Storefront UI
+box over Storefront UI:Updated: shopping-cart
+deactivateafter Storefront UI
+end
+Customer->>Storefront UI:Click "Checkout"
+activate Storefront UI
+Storefront UI->Order Entry Server:Checkout
+activate Order Entry Server
+deactivate Storefront UI
+Order Entry Server->Customer DB:Fetch customer history
+deactivate Order Entry Server
+activate Customer DB
+Order Entry Server<<--Customer DB:ActiveRecord: customer\nhistory - contains the\nCustomerRating
+deactivate Customer DB
+activate Order Entry Server
+alt CustomerRating is GOOD or BEST]
+Order Entry Server->Customer DB:Add Customer Transaction
+deactivate Order Entry Server
+activate Customer DB
+Order Entry Server<<--Customer DB:Ack
+deactivate Customer DB
+activate Order Entry Server
+Storefront UI<<-Order Entry Server:HTML Response:\nOrdered complete
+deactivateafter Order Entry Server
+activate Storefront UI
+box over Storefront UI:Updated: "Congrats! Your\norder has been placed" page
+deactivateafter Storefront UI
+activate Order Entry Server
+else
+Storefront UI<<-Order Entry Server:HTML Response: You are not\na GOOD or BEST customer.
+activate Storefront UI
+deactivate Order Entry Server
+box over Storefront UI:Updated: "We're sorry! We\ncan't complete your order\nright now. Please try again\nlater." page
+deactivateafter Storefront UI
+end

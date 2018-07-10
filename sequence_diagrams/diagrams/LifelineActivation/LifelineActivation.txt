@@ -1,0 +1,9 @@
+title Lifeline Activation
+
+participant Inactive Server
+
+participant Running Server
+space
+activate Running Server
+space
+deactivate Running Server

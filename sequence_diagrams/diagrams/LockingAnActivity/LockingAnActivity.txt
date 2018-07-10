@@ -1,0 +1,54 @@
+# All diagrams should have a title. If possible, try to title
+#  . the diagram relative to a user story, so as to provide
+#  . some context. Titles, in SequenceDiagram.org, don't look
+#  . like they support newlines or styling -- keep 'em short,
+#  . keep 'em simple.
+
+title Locking an Activity in LARA
+
+# Kind of nice to create all the thingies at the top of the
+#  . diagram.
+
+actor Author
+participant Web Browser
+participant LARA
+database ElasticSearch
+participant Portal
+
+# Let's start by having the user send a message by clicking
+#  . on a button in the UI. Somewhat, by convention, messages
+#  . originating from humans are asynchronous because we don't
+#  . really know if they care to look at the result.
+
+Author->>Web Browser:Clicks\n"submit"
+
+# The browser creates a request it will sent to LARA that is
+#  . a server waiting for HTTP requests.
+
+activate Web Browser
+Web Browser->LARA: "POST" locked\nattribute
+deactivate Web Browser
+
+# When LARA gets the POST message from the browser, activates,
+#  . sends a an asynchronous message to ElasticSearch, then a
+#  . synchronous message to the Portal server, and blocks.
+
+activate LARA
+LARA->>ElasticSearch:update lock\nstatus
+LARA->Portal:JSON:update-activity
+deactivateafter LARA
+
+# The Portal handles the request and responds back to LARA,
+#  . which is blocked and waiting for the response message.
+
+activate Portal
+Portal-->>LARA:Response: Success
+deactivateafter Portal
+
+# And finally, LARA receives the response and finishes up.
+
+activate LARA
+LARA-->>Web Browser:Response:\nSuccess
+deactivateafter LARA
+
+activate Web Browser
