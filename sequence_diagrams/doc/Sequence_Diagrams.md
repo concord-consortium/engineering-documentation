@@ -8,7 +8,9 @@ These diagrams are particularly useful because they directly represent the passa
 
 To provide some motivation, here is an example sequence diagram that might have been part of a user story called "User Can Update Content". Such a user story might have several use-case scenarios which can become fairly complex but are, nevertheless, very important to understanding exactly what happens. This diagram might have been used to capture how a particular use-case, "Set in_use Status" might be designed.
 
+<center>
 ![](../diagrams/UserCanUpdateContent/UserCanUpdateContent.png)
+</center>
 
 As I hope is evident from this example, the diagram clearly communicates the essence of the use-case. Because of this clarity, sequence diagrams are a valuable way to explore, communicate, and precisely capture use-cases that might arise while discussing a user story.
 
@@ -47,7 +49,7 @@ The _thingies_, the objects that send/receive messages, run across the top of th
 * A _datastore_, also known as a _database_, which are data storage systems and are kind of self explanatory.
 
 <center>
-![](../diagrams/TypesOfThingies/TypesOfThingies.png)
+![](diagrams/TypesOfThingies/TypesOfThingies.png)
 </center>
 
 Participants (objects) are the catch-all _thingie_ and can be used to represent pretty much anything. The [Sequence Diagram] tool uses the keyword `participant` and does not have a keyword for object. This document will tend to use the word _participant_ and _object_ (and _thingie_, for that matter) interchangeably.
