@@ -8,13 +8,25 @@ These diagrams are particularly useful because they directly represent the passa
 
 To provide some motivation, here is an example sequence diagram that might have been part of a user story called "User Can Update Content". Such a user story might have several use-case scenarios which can become fairly complex but are, nevertheless, very important to understanding exactly what happens. This diagram might have been used to capture how a particular use-case, "Set in_use Status" might be designed.
 
-...A Test of Embedded images on GitHub.
+...A Test of Embedded images on GitHub. No Centring.
 
 ![](UserCanUpdateContent.png)
 
-...Another Test of Embedded images on GitHub.
+...Another Test of Embedded images on GitHub. Trying the braindead center tags.
 
 <center>![](UserCanUpdateContent.png)</center>
+
+... Using p align with image tag.
+
+<p align="center">
+  <img src="UserCanUpdateContent.png">
+</p>
+
+... using p align outside of markdown syntax.
+
+<p align="center">
+![](UserCanUpdateContent.png)
+</p>
 
 
 As I hope is evident from this example, the diagram clearly communicates the essence of the use-case. Because of this clarity, sequence diagrams are a valuable way to explore, communicate, and precisely capture use-cases that might arise while discussing a user story.
