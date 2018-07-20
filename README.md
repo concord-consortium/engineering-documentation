@@ -9,9 +9,8 @@ Please keep in mind, this is a public repository.
 |      Document       | Description                        |   Author   |
 |:-------------------:|------------------------------------|------------|
 | [Sequence Diagrams] | Introduction & some best practices | D. A. Love |
-
-
+| [ES6 - New Stuff]   | Nodes from learning ES6 features   | D. A. Love |
 
 [Sequence Diagrams]: ./sequence_diagrams/doc/Sequence_Diagrams.md
-
+[ES6 - New Stuff]:   ./ES6_notes/ES6_notes.md
 
